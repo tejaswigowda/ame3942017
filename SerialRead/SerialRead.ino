@@ -4,6 +4,8 @@ String inData;
 void setup() {
   // initialize serial:
   Serial.begin(115200);
+    pinMode(LED_BUILTIN, OUTPUT);
+
   // reserve 200 bytes for the inputString:
 }
 
@@ -18,6 +20,14 @@ void loop() {
         {
             Serial.print("Arduino Received: ");
             Serial.print(inData);
+
+            int x = inData.toInt();
+            if(x == 1){
+               digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+            }
+            else if (x == 0){
+               digitalWrite(LED_BUILTIN, LOW);   // turn the LED off
+            }
 
             inData = ""; // Clear recieved buffer
         }
