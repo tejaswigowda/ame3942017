@@ -16,12 +16,20 @@ void setup() {
   Serial.println("Setup done");
 }
 
+
+bool flag = false;// was scan done?
+
 void loop() {
+  if(flag == 1){
+    return;
+  }
   Serial.println("scan start");
 
+  
   // WiFi.scanNetworks will return the number of networks found
   int n = WiFi.scanNetworks();
   Serial.println("scan done");
+  flag = true;
   if (n == 0)
     Serial.println("no networks found");
   else
