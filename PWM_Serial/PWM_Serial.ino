@@ -23,12 +23,8 @@ void loop() {
             Serial.print(inData);
 
             int x = inData.toInt();
-            if(x == 1){
-               digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
-            }
-            else if (x == 0){
-               digitalWrite(LED, LOW);   // turn the LED off
-            }
+            analogWrite(LED, x);
+
 
             inData = ""; // Clear recieved buffer
         }
