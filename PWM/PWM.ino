@@ -1,5 +1,5 @@
 
-int led = D0;
+int led = D2;
 int brightness = 0;    // how bright the LED is
 int fadeAmount = 5;    // how many points to fade the LED by
 
