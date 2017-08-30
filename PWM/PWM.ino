@@ -1,5 +1,5 @@
 
-int led = D2;
+int led = D5;
 int brightness = 0;    // how bright the LED is
 int fadeAmount = 5;    // how many points to fade the LED by
 
@@ -21,5 +21,5 @@ void loop() {
     fadeAmount = -fadeAmount;
   }
   // wait for 30 milliseconds to see the dimming effect
-  delay(30);
+  delay(500);
 }
