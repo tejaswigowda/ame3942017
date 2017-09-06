@@ -1,5 +1,5 @@
 int potPin = A0;    // select the input pin for the potentiometer
-int val = 0;  
+float val = 0;  
 
 
 float mapFloat(float x, float in_min, float in_max, float out_min, float out_max)
@@ -14,6 +14,6 @@ void setup() {
 
 void loop() {
   val = analogRead(potPin);    // read the value from the sensor
-  float valMapped = mapFloat(val, 0, 1023, 0, 100);
+  float valMapped = mapFloat(val, 0, 1023, 0, 99.99);
   Serial.println(valMapped);  
 }
