@@ -8,5 +8,6 @@ void setup() {
 
 void loop() {
   val = analogRead(potPin);    // read the value from the sensor
-  Serial.println(val);  
+  int valMapped = map(val, 0, 1023, 0, 100);
+  Serial.println(valMapped);  
 }
