@@ -1,4 +1,4 @@
-# Assignment 1
+# Assignment 2
 **Due Sep 20<sup>th</sup> before class**
 
 ## Task 
