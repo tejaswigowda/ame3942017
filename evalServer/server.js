@@ -1,9 +1,10 @@
 var http = require("http");
 
 var callback = function (req, res) { // req -> request object; res -> response object
-  console.log(req.url);
+  var eq = req.url.replace("/","");;
+  var r = eq + " = " + eval(eq).toString() + "\n";
    res.writeHead(200, {'Content-Type': 'text/plain'}); // send response header
-   res.end("hello world"); // send response body
+   res.end(r); // send response body
 }
 
 var server = http.createServer(callback) // create an http server
