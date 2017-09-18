@@ -7,9 +7,15 @@ const char* password = "12345678";
 
 const char* host = "google.com";
 
+
+const int buttonPin = D2; 
+int buttonState = 0;         // variable for reading the pushbutton status
+
 void setup() {
   Serial.begin(115200);
   delay(10);
+
+  pinMode(buttonPin, INPUT);
 
   // We start by connecting to a WiFi network
 
@@ -37,6 +43,8 @@ void loop() {
   delay(5000);
   ++value;
 
+  buttonState = digitalRead(buttonPin);
+  Serial.println(buttonState);
   Serial.print("connecting to ");
   Serial.println(host);
   
