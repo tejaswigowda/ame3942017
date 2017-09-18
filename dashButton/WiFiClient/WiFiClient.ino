@@ -12,11 +12,12 @@ const int buttonPin = D2;
 int buttonState = 0;         // variable for reading the pushbutton status
 
 void setup() {
+  pinMode(buttonPin, INPUT);
+
   Serial.begin(115200);
   delay(10);
 
-  pinMode(buttonPin, INPUT);
-
+/*
   // We start by connecting to a WiFi network
 
   Serial.println();
@@ -35,16 +36,19 @@ void setup() {
   Serial.println("WiFi connected");  
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
+  */
 }
 
 int value = 0;
 
 void loop() {
+  buttonState = digitalRead(buttonPin);
+  Serial.println(buttonState);
+  /*
   delay(5000);
   ++value;
 
-  buttonState = digitalRead(buttonPin);
-  Serial.println(buttonState);
+
   Serial.print("connecting to ");
   Serial.println(host);
   
@@ -83,5 +87,6 @@ void loop() {
   
   Serial.println();
   Serial.println("closing connection");
+  */
 }
 
