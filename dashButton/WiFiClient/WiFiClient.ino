@@ -1,19 +1,11 @@
-/*
- *  This sketch sends data via HTTP GET requests to data.sparkfun.com service.
- *
- *  You need to get streamId and privateKey at data.sparkfun.com and paste them
- *  below. Or just customize this script to talk to other HTTP servers.
- *
- */
+
 
 #include <ESP8266WiFi.h>
 
-const char* ssid     = "your-ssid";
-const char* password = "your-password";
+const char* ssid     = "Tejaswi";
+const char* password = "12345678";
 
-const char* host = "data.sparkfun.com";
-const char* streamId   = "....................";
-const char* privateKey = "....................";
+const char* host = "google.com";
 
 void setup() {
   Serial.begin(115200);
@@ -57,12 +49,7 @@ void loop() {
   }
   
   // We now create a URI for the request
-  String url = "/input/";
-  url += streamId;
-  url += "?private_key=";
-  url += privateKey;
-  url += "&value=";
-  url += value;
+  String url = "/";
   
   Serial.print("Requesting URL: ");
   Serial.println(url);
