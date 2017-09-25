@@ -5,7 +5,7 @@
 const char* ssid     = "Tejaswi";
 const char* password = "12345678";
 
-const char* host = "google.com";
+const char* host = "34.213.11.229";
 
 
 const int buttonPin = D2; 
@@ -17,7 +17,7 @@ void setup() {
   Serial.begin(115200);
   delay(10);
 
-/*
+
   // We start by connecting to a WiFi network
 
   Serial.println();
@@ -36,7 +36,7 @@ void setup() {
   Serial.println("WiFi connected");  
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
-  */
+  
 }
 
 int lastVal = 1;
@@ -46,25 +46,11 @@ void handleButtonPress()
   Serial.print("Button Press #");
   Serial.println(num);
   num++;
-}
-
-void loop() {
-  buttonState = digitalRead(buttonPin);
-  //Serial.println(buttonState);
-  if(buttonState == 1 && lastVal == 0){
-    handleButtonPress();
-  }
-  lastVal = buttonState;
-  /*
-  delay(5000);
 
 
-  Serial.print("connecting to ");
-  Serial.println(host);
-  
-  // Use WiFiClient class to create TCP connections
+   // Use WiFiClient class to create TCP connections
   WiFiClient client;
-  const int httpPort = 80;
+  const int httpPort = 8080;
   if (!client.connect(host, httpPort)) {
     Serial.println("connection failed");
     return;
@@ -97,6 +83,24 @@ void loop() {
   
   Serial.println();
   Serial.println("closing connection");
+  
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);
+  //Serial.println(buttonState);
+  if(buttonState == 1 && lastVal == 0){
+    handleButtonPress();
+  }
+  lastVal = buttonState;
+  /*
+  delay(5000);
+
+
+  Serial.print("connecting to ");
+  Serial.println(host);
+  
+ 
   */
 }
 
