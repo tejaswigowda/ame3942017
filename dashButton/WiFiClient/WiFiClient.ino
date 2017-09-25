@@ -50,7 +50,7 @@ void handleButtonPress()
 
 void loop() {
   buttonState = digitalRead(buttonPin);
-  Serial.println(buttonState);
+  //Serial.println(buttonState);
   if(buttonState == 1 && lastVal == 0){
     handleButtonPress();
   }
