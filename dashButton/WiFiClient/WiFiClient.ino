@@ -39,14 +39,24 @@ void setup() {
   */
 }
 
-int value = 0;
+int lastVal = 1;
+int num = 1;
+void handleButtonPress()
+{
+  Serial.print("Button Press #");
+  Serial.println(num);
+  num++;
+}
 
 void loop() {
   buttonState = digitalRead(buttonPin);
   Serial.println(buttonState);
+  if(buttonState == 1 && lastVal == 0){
+    handleButtonPress();
+  }
+  lastVal = buttonState;
   /*
   delay(5000);
-  ++value;
 
 
   Serial.print("connecting to ");
