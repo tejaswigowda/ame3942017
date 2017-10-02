@@ -58,7 +58,7 @@ void sendMessage(int val)
   }
   
   // We now create a URI for the request
-  String url = "/";
+  String url = "/update?val=";
   url += val;
   Serial.print("Requesting URL: ");
   Serial.println(url);
