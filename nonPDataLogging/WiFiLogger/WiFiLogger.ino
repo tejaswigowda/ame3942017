@@ -60,6 +60,10 @@ void sendMessage(int val)
   // We now create a URI for the request
   String url = "/update?val=";
   url += val;
+  /*
+   * url += "&temp=" 
+   * url += tval;
+   */
   Serial.print("Requesting URL: ");
   Serial.println(url);
   
