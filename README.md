@@ -1,5 +1,10 @@
 # ame3942017
 
+(Nodemailer + Gmail)[https://medium.com/@manojsinghnegi/sending-an-email-using-nodemailer-gmail-7cfa0712a799]
+
+(DHT11
+Tutorial)[http://randomnerdtutorials.com/complete-guide-for-dht11dht22-humidity-and-temperature-sensor-with-arduino/]
+
 (ESP8266
 boards)[http://arduino.esp8266.com/stable/package_esp8266com_index.json]
 
