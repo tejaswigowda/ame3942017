@@ -22,9 +22,9 @@ app.get("/update", function (req, res) {
 
 app.get("/get", function (req, res) {
   var outS = "";
-    outS +=  "Light: " light + "<br>";
-    outS +=  "Temperature: " temp + "<br>";
-    outS +=  "Humidity: " + "<br>";
+    outS +=  "Light: " + light + "<br>";
+    outS +=  "Temperature: " + temp + "<br>";
+    outS +=  "Humidity: " + humidity;
     res.send(outS);
 });
 
