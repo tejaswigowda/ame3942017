@@ -25,7 +25,7 @@ app.get("/get", function (req, res) {
     outS +=  light + "<br>";
     outS +=  temp + "<br>";
     outS +=  humidity + "<br>";
-    res.send(outS)
+    res.send(outS);
 });
 
 app.use(methodOverride());
