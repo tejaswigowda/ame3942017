@@ -93,10 +93,10 @@ void sendMessage(int val)
 
 void loop() {
   buttonState = analogRead(buttonPin);
-  //Serial.println(buttonState);
-  if(buttonState != lastVal){
+  Serial.println(buttonState);
+  //if(buttonState != lastVal){
     sendMessage(buttonState);
-  }
+  //}
   lastVal = buttonState;
   /*
   delay(5000);
