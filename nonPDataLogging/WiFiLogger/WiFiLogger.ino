@@ -58,11 +58,13 @@ void sendMessage(int val)
   }
   
   // We now create a URI for the request
-  String url = "/update?val=";
+  String url = "/update?light=";
   url += val;
   /*
    * url += "&temp=" 
    * url += tval;
+   * url += "&humidity=" 
+   * url += hval;
    */
   Serial.print("Requesting URL: ");
   Serial.println(url);
