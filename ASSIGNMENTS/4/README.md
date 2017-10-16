@@ -7,6 +7,11 @@ Starting with
 (https://github.com/tejaswigowda/ame3942017/tree/master/nonPDataLogging),
 implement the reading of the DHT11 sensor and send data back to server.
 
+#References:
+
+DHT11 interrupt library: (https://github.com/niesteszeck)
+DHT11 library: (http://playground.arduino.cc/Main/DHT11Lib)
+
 ![circuit
 ](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2015/05/humidity_schematics.jpg
 "DHT11")
