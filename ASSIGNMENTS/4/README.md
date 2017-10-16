@@ -8,7 +8,7 @@ Starting with
 implement the reading of the DHT11 sensor and send data back to server.
 
 ![circuit
-](https://qph.ec.quoracdn.net/main-qimg-edfa481e6ee88e4b84a4a551c89657bd
+](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2015/05/humidity_schematics.jpg
 "DHT11")
 
 
