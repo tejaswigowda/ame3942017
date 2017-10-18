@@ -2,9 +2,26 @@
 <html>
 <head>
 <script src="asyncReq.js"> </script>
+<script>
+  var x = function(){
+    loadFile("./get", function(data){
+      console.log(data);
+      document.getElementById("results").innerHTML = data;
+    });
+  }
+function start()
+{
+  setInterval("x()", 10000);
+}
+
+</script>
+
 </head>
 
-<body>
+<body onload='start()'>
 <h1> TEST </h1>
+
+<div id='results'> </div>
+
 </body>
 </html>
