@@ -28,6 +28,17 @@ app.get("/get", function (req, res) {
     res.send(outS);
 });
 
+
+app.get("/getData", function (req, res) {
+  var rObj = {
+    "light": light || "NA",
+    "temp": temp || "NA",
+    "humidity": humidity || "NA"
+  };
+  console.log(rObj);
+  res.send(JSON.stringify(rObj));
+});
+
 app.use(methodOverride());
 app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));

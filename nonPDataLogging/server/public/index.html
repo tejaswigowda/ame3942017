@@ -4,9 +4,12 @@
 <script src="asyncReq.js"> </script>
 <script>
   var x = function(){
-    loadFile("./get", function(data){
-      console.log(data);
-      document.getElementById("results").innerHTML = data;
+    loadFile("./getData", function(data){
+      var obj = JSON.parse(data);
+      document.getElementById("results").innerHTML = 
+        "<b>LIGHT:</b> " + obj.light +
+        "<br> <b>TEMP:</b> " + obj.temp +
+        "<br> <b>HUMIDITY:</b> " + obj.humidity; 
     });
   }
 function start()
