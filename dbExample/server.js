@@ -6,7 +6,12 @@ var methodOverride = require('method-override');
 var hostname = process.env.HOSTNAME || 'localhost';
 var port = 8080;
 
-var db = require('mongoskin').db('mongodb://user:pwd@127.0.0.1:27017/ame394');
+
+var MS = require('mongoskin');
+var db = MS.db('mongodb://user:pwd@127.0.0.1:27017/ame394');
+db.collection('data').findOne({a:2}, function(err, result) {
+  console.log(result);
+});
 
 var light;
 var temp;
@@ -48,3 +53,6 @@ app.use(errorHandler());
 
 console.log("Simple static server listening at http://" + hostname + ":" + port);
 app.listen(port);
+
+
+
