@@ -6,7 +6,7 @@ var methodOverride = require('method-override');
 var hostname = process.env.HOSTNAME || 'localhost';
 var port = 8080;
 
-var db = require('mongoskin').db('mongodb://user:pwd@127.0.0.1:27017/ame394'),
+var db = require('mongoskin').db('mongodb://user:pwd@127.0.0.1:27017/ame394');
 
 var light;
 var temp;
