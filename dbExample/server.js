@@ -9,7 +9,11 @@ var port = 8080;
 
 var MS = require('mongoskin');
 var db = MS.db('mongodb://user:pwd@127.0.0.1:27017/ame394');
-db.collection('data').findOne({a:2}, function(err, result) {
+db.collection('data').findOne({b:2}, function(err, result) {
+  console.log(result);
+});
+
+db.collection('data').find().toArray(function(err, result){
   console.log(result);
 });
 
