@@ -9,12 +9,6 @@ var port = 8080;
 
 var MS = require('mongoskin');
 var db = MS.db('mongodb://user:pwd@127.0.0.1:27017/ame394');
-db.collection('data').findOne({b:2}, function(err, result) {
-  console.log(result);
-});
-db.collection('data').find().toArray(function(err, result){
-  console.log(result);
-});
 
 var light;
 var temp;
@@ -29,11 +23,15 @@ app.get("/update", function (req, res) {
       console.log(result);
     });
 
+    res.send("1")
+});
 
-    light = req.query.light || light;
-    temp = req.query.temp || temp;
-    humidity = req.query.humidity || humidity;
-        res.send("1")
+app.get("/getData", function (req, res) {
+  db.collection('data').find().sort({time:-1}).toArray(function(err, result){
+    rObj = result[0];
+    console.log(rObj);
+    res.send(JSON.stringify(rObj));
+  });
 });
 
 
@@ -45,16 +43,6 @@ app.get("/get", function (req, res) {
     res.send(outS);
 });
 
-
-app.get("/getData", function (req, res) {
-  var rObj = {
-    "light": light || "NA",
-    "temp": temp || "NA",
-    "humidity": humidity || "NA"
-  };
-  console.log(rObj);
-  res.send(JSON.stringify(rObj));
-});
 
 app.use(methodOverride());
 app.use(bodyParser());
