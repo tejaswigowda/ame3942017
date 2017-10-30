@@ -12,7 +12,6 @@ var db = MS.db('mongodb://user:pwd@127.0.0.1:27017/ame394');
 db.collection('data').findOne({b:2}, function(err, result) {
   console.log(result);
 });
-
 db.collection('data').find().toArray(function(err, result){
   console.log(result);
 });
@@ -23,7 +22,14 @@ var humidity;
 
 app.get("/update", function (req, res) {
     console.log("GET req arrived")
-    console.log(req.query);
+    var info = req.query;
+    info.time = new Date().getTime();
+
+    db.collection('data').insert(info, function(err, result) {
+      console.log(result);
+    });
+
+
     light = req.query.light || light;
     temp = req.query.temp || temp;
     humidity = req.query.humidity || humidity;
