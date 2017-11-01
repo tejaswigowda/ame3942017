@@ -8,7 +8,7 @@ temperature, humidity and light.
 
 
 
-<style='border:dashed 2px' img src='x.png'>
+<img style='border:dashed 2px' src='x.png'>
 
 #References:
  Assignment 4 and handout
