@@ -3,13 +3,21 @@
 <head>
 <script src="asyncReq.js"> </script>
 <script>
+  var oldObj = {};
   var x = function(){
     loadFile("./getData", function(data){
       var obj = JSON.parse(data);
-      document.getElementById("results").innerHTML = 
-        "<b>LIGHT:</b> " + obj.light +
-        "<br> <b>TEMP:</b> " + obj.temp +
-        "<br> <b>HUMIDITY:</b> " + obj.humidity; 
+      var markup = "";
+
+       markup += "<b>LIGHT:</b> " + obj.light;
+
+       markup += "<br> <b>TEMP:</b> " + obj.temp;
+
+       markup += "<br> <b>HUMIDITY:</b> " + obj.humidity; 
+
+      document.getElementById("results").innerHTML = markup;
+
+      oldObj = obj;
     });
   }
 function start()
