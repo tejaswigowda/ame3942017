@@ -6,6 +6,8 @@ Starting with
 implement a client side (only) that shows you the changes in
 temperature, humidity and light. 
 
+
+
 <img src='x.png'>
 
 #References:
