@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<script src="asyncReq.js"> </script>
+<script>
+  var x = function(){
+    loadFile("./getData", function(data){
+      var obj = JSON.parse(data);
+      document.getElementById("results").innerHTML = 
+        "<b>LIGHT:</b> " + obj.light +
+        "<br> <b>TEMP:</b> " + obj.temp +
+        "<br> <b>HUMIDITY:</b> " + obj.humidity; 
+    });
+  }
+function start()
+{
+  x();
+  setInterval("x()", 1000);
+}
+
+</script>
+
+</head>
+
+<body onload='start()'>
+<h1> TEST </h1>
+
+<div id='results'> </div>
+
+</body>
+</html>
