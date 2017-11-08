@@ -17,7 +17,7 @@ var humidity;
 app.get("/update", function (req, res) {
     console.log("GET req arrived")
     var info = req.query;
-    info.time = new Date().getTime();
+    info.time = new Date().getTime().toString();
 
     db.collection('data').insert(info, function(err, result) {
       console.log(result);
@@ -38,8 +38,8 @@ app.get("/getDataLatest", function (req, res) {
 app.get("/getDataInRange", function (req, res) {
   var info = req.query;
   console.log(info);
-  var fromDate = parseInt(info.from);
-  var toDate = parseInt(info.to);
+  var fromDate = info.from;
+  var toDate = info.to;
 
   db.collection('data').find({time:{$gte: fromDate, $lte:toDate}}).sort({time:-1}).toArray(function(err, result){
     console.log(result);

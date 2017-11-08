@@ -18,7 +18,7 @@ function getTimeInFormat(dObj)
 }
 
 var buildGraph = function(){
-  var to =  new Date(document.getElementById("dateInput").value + " " +document.getElementById("timeInput").value).getTime();
+  var to =  new Date(document.getElementById("dateInput").value + " " + document.getElementById("timeInput").value).getTime();
   var from = to - (parseInt(document.getElementById("timeSelect").value) * 60 * 1000);
 
   loadFile("./getDataInRange?to="+ to + "&from=" + from, function(data){
