@@ -37,6 +37,7 @@ app.get("/getDataLatest", function (req, res) {
 
 app.get("/getDataInRange", function (req, res) {
   var info = req.query;
+  console.log(info);
   var fromDate = parseInt(info.from);
   var toDate = parseInt(info.to);
 

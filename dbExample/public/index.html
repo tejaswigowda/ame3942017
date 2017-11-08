@@ -3,17 +3,35 @@
 <head>
 <script src="asyncReq.js"> </script>
 <script>
-  var x = function(){
-    loadFile("./getData", function(data){
-      var obj = JSON.parse(data);
-      document.getElementById("results").innerHTML = 
-        "<b>LIGHT:</b> " + obj.light +
-        "<br> <b>TEMP:</b> " + obj.temp +
-        "<br> <b>HUMIDITY:</b> " + obj.humidity; 
-    });
-  }
+function format2(n){
+   return n > 9 ? "" + n: "0" + n;
+}
+
+function getDateInFormat(dObj)
+{
+  document.getElementById("dateInput").value = dObj.getFullYear() + "-" + format2(dObj.getMonth()) + "-" + format2(dObj.getDate())
+}
+
+function getTimeInFormat(dObj)
+{
+  document.getElementById("timeInput").value = format2(dObj.getHours()) + ":" + format2(dObj.getMinutes());
+}
+
+var buildGraph = function(){
+  var to =  new Date(document.getElementById("dateInput").value + " " +document.getElementById("timeInput").value).getTime();
+  var from = to - (parseInt(document.getElementById("timeSelect").value) * 60 * 1000);
+
+  loadFile("./getDataInRange?to="+ to + "&from=" + from, function(data){
+    var obj = JSON.parse(data);
+    console.log(obj);
+  });
+}
+
 function start()
 {
+   getDateInFormat(new Date());
+   getTimeInFormat(new Date());
+   buildGraph();
 }
 
 </script>
@@ -25,6 +43,14 @@ function start()
 
 <input type='date' id='dateInput'>
 <input type='time' id='timeInput'>
+
+<select id='timeSelect'>
+  <option value='5'> last 5 min </option>
+  <option value='10'> last 10 min </option>
+  <option value='15'> last 15 min </option>
+  <option value='30'> last 30 min </option>
+  <option value='60'> last 1 hour </option>
+</select>
 
 <div id='results'> </div>
 
