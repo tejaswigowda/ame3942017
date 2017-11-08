@@ -26,8 +26,21 @@ app.get("/update", function (req, res) {
     res.send("1")
 });
 
-app.get("/getData", function (req, res) {
+app.get("/getDataLatest", function (req, res) {
   db.collection('data').find().sort({time:-1}).toArray(function(err, result){
+    rObj = result[0];
+    console.log(rObj);
+    res.send(JSON.stringify(rObj));
+  });
+});
+
+
+app.get("/getDataInRange", function (req, res) {
+  var info = req.query;
+  var fromDate = info.from;
+  var toDate = info.to;
+
+  db.collection('data').find({}).sort({time:-1}).toArray(function(err, result){
     rObj = result[0];
     console.log(rObj);
     res.send(JSON.stringify(rObj));
