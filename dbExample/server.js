@@ -37,13 +37,12 @@ app.get("/getDataLatest", function (req, res) {
 
 app.get("/getDataInRange", function (req, res) {
   var info = req.query;
-  var fromDate = info.from;
-  var toDate = info.to;
+  var fromDate = parseInt(info.from);
+  var toDate = parseInt(info.to);
 
   db.collection('data').find({time:{$gte: fromDate, $lte:toDate}}).sort({time:-1}).toArray(function(err, result){
-    rObj = result[0];
-    console.log(rObj);
-    res.send(JSON.stringify(rObj));
+    console.log(result);
+    res.send(JSON.stringify(result));
   });
 });
 
