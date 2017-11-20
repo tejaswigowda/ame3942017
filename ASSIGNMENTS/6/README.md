@@ -14,3 +14,12 @@ time pickers.
 
 ## Grading
 Evaluated with demo in class (on Safari/Edge and Chrome) .
+
+
+## Hint
+
+```js
+$('#dateInput').datetimepicker({
+  altField: "#timeInput"
+});
+```
