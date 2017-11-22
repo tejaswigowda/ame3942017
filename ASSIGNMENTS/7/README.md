@@ -20,7 +20,7 @@ chart.flow({
  columns: [
     ['Light', 500, 200],
     ['Humidity', 100, 150],
-    ['Temp', 200, 400]
+    ['Temperature', 200, 400]
  ],
  duration: 1500
 });
