@@ -29,13 +29,10 @@ var chart;
 var buildGraph = function(){
   var to =  new Date().getTime();
   var from = to - 5 * 60 * 1000;
-  console.log(new Date(from), new Date(to));
   var url = "./getDataInRange?to="+ to + "&from=" + from
-  console.log(url);
 
   loadFile(url, function(data){
     var obj = JSON.parse(data);
-    console.log(obj);
     var cols = [
       ["Light"],
       ["Humidity"],
@@ -49,7 +46,6 @@ var buildGraph = function(){
       }
     };
 
-    console.log(cols);
     chart = c3.generate({
         bindto: '#results',
         data: {
