@@ -11,7 +11,7 @@ Improving on the last assignment make a real-time ticker of recieved sensor data
 Evaluated with demo in class. Submit code on Github.
 
 ##Hint
-1. Edit ``updateGraph()``
+1. Edit ``updateGraph()`` in ``public/index.html``.
 
 2.
 
