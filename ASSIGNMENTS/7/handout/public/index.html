@@ -67,9 +67,15 @@ function valuesChanged()
 
 function start()
 {
-   setInterval("buildGraph()", 1000);
+   buildGraph();
+   setInterval("updateGraph()", 1000);
 }
 
+function updateGraph()
+{
+	/* edit this function to make the graph update live */
+	buildGraph();
+}
 </script>
 
 </head>
