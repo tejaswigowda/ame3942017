@@ -1,4 +1,4 @@
-# Assignment 6
+# Assignment 7
 **Due Nov 27<sup>th</sup> before class**
 
 ## Task 
@@ -9,4 +9,21 @@ Improving on the last assignment make a real-time ticker of recieved sensor data
 
 ## Grading
 Evaluated with demo in class. Submit code on Github.
+
+##Hint
+1. Edit ``updateGraph()``
+
+2.
+
+```
+chart.flow({
+ columns: [
+    ['Light', 500, 200],
+    ['Humidity', 100, 150],
+    ['Temp', 200, 400]
+ ],
+ duration: 1500
+});
+
+```
 
