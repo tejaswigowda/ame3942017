@@ -1,8 +1,8 @@
-Assignment 8
+# Assignment 8
 **Due Nov 29<sup>th</sup> before end of class**
 
 ## Task 
-Display the temperature, light and humidity readings in a LCD Display.
+Display the temperature, light and humidity readings in a LCD Display (from class IoT kit).
 
 ## References
 - code handout from previous assignments.
